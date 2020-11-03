@@ -1,0 +1,35 @@
+﻿
+@using ShopShoe.Models;
+@*Định nghĩa kiểu dữ liệu cho biến Model*@
+@model List<Giay>
+@{
+    ViewBag.Title = "GiayMoiParrtial";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+
+<h2 class="item-header"> Giày mới</h2>
+@{
+    foreach (var item in Model)
+    {
+        <div class="activity-list-update">
+            <img src="@Url.Content("~/Asset/imagie/anh/"+item.AnhBia)" width="50" height="50" alt="Image">
+            @*Nếu tên sách dài hơn 30 ký tự thì chúng ta sẽ cắt tên sách ra lấy từ ký tự 0 đến ký tự 35*@
+            @if (item.TenGiay.Length > 30)
+            {
+                <p><strong title="@item.TenGiay">Tiêu đề: @item.TenGiay.Substring(0, 30)...</strong><br /><a href="@Url.Action("XemChiTiet", new { @maGiay=item.MaGiay })">Xem chi tiết</a></p>
+            }
+            else
+            {
+                <p><strong title="@item.TenGiay">Tiêu đề: @item.TenGiay</strong><br /><a href="@Url.Action("XemChiTiet", new { @maGiay=item.MaGiay })">Xem chi tiết</a></p>
+                <div class="clear"></div>
+            }
+
+        </div>
+
+
+    }
+}
+<a href="#" style="background-color: #0092a5; " class="item-footer green">
+    Sách loại mới nhất
+</a>

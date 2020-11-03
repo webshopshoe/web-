@@ -1,0 +1,25 @@
+﻿@using ShopShoe.Models;
+@using PagedList.Mvc;
+@model PagedList.PagedList<Giay>
+@{
+    foreach (var item in Model)
+    {
+        <div class="col-md-3 col-sm-6">
+            <div class="products">
+                <div class="thumbnail">
+                    <a href="/Home/details"><img src="@Url.Content("~/Asset/images/anh/"+item.AnhBia)" alt="Product Name"></a>
+                </div>
+                <div class="productname">@item.TenGiay</div>
+                <h4 class="price"> @item.GiaBan K</h4>
+                <div class="button_group"><button class="button add-cart" type="button">Add To Cart</button><button class="button compare" type="button"><i class="fa fa-exchange"></i></button><button class="button wishlist" type="button"><i class="fa fa-heart-o"></i></button></div>
+            </div>
+        </div>
+    }
+
+}
+@*tao link lien ket trang*@
+<div class="clearfix"></div>
+    Trang @(Model.PageCount< Model.PageNumber?0:Model.PageNumber)/@Model.PageCount
+    @Html.PagedListPager(Model, Page => Url.Action("Adias", new { Page = Page }))
+
+

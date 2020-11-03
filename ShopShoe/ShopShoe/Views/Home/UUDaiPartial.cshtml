@@ -1,0 +1,25 @@
+﻿@using ShopShoe.Models;
+@model List<Giay>
+@{
+    foreach (var item in Model)
+    {
+        <div class="special-item">
+            <div class="product-image">
+                <a href="/Home/details">
+                    <img src="@Url.Content("~/Asset/images/anh/"+item.AnhBia)" alt="">
+                </a>
+            </div>
+            <div class="product-info">
+                <p>
+                    <a href="/Home/details">
+                        @item.TenGiay
+                    </a>
+                </p>
+                <h5 class="price">
+                    @item.GiaBan K
+                </h5>
+            </div>
+        </div>
+    }
+}
+

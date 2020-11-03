@@ -1,0 +1,201 @@
+﻿
+@{
+    ViewBag.Title = "checkout";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+<div class="clearfix">
+</div>
+<div class="page-index">
+    <div class="container">
+        <p>
+            Home - CheckOut
+        </p>
+    </div>
+</div>
+      
+<div class="clearfix">
+</div>
+<div class="container_fullwidth">
+    <div class="container">
+        <div class="row">
+            <div class="col-md-3">
+                <div class="special-deal leftbar" style="margin-top:0;">
+                    <h4 class="title">
+                        Ưu đãi
+                        <strong>
+                            đặc biệt
+                        </strong>
+                    </h4>
+                   @Html.Action("UUDaiPartial","Home")
+                   
+                 </div>
+
+                <div class="get-newsletter leftbar">
+                    <h3 class="title">
+                        Nhận
+                        <strong>
+                            thông tin mới
+                        </strong>
+                    </h3>
+                    <p>
+                        Nhập email để nhận thông tin
+                    </p>
+                    <form>
+                        <input class="email" type="text" name="" placeholder="Your Email...">
+                        <input class="submit" type="submit" value="Submit">
+                    </form>
+                </div>
+                <div class="fbl-box leftbar">
+                    <h3 class="title">
+                        Facebook
+                    </h3>
+                    <span class="likebutton">
+                        <a href="#">
+                            <img src="~/Asset/images/fblike.png" alt="">
+                        </a>
+                    </span>
+                    <p>
+                        12k people like Flat Shop.
+                    </p>
+                    <ul>
+                        <li>
+                            <a href="#">
+                            </a>
+                        </li>
+                        <li>
+                            <a href="#">
+                            </a>
+                        </li>
+                        <li>
+                            <a href="#">
+                            </a>
+                        </li>
+                        <li>
+                            <a href="#">
+                            </a>
+                        </li>
+                        <li>
+                            <a href="#">
+                            </a>
+                        </li>
+                        <li>
+                            <a href="#">
+                            </a>
+                        </li>
+                        <li>
+                            <a href="#">
+                            </a>
+                        </li>
+                        <li>
+                            <a href="#">
+                            </a>
+                        </li>
+                    </ul>
+                    <div class="fbplug">
+                        <a href="#">
+                            <span>
+                                <img src="~/Asset/images/fbicon.png" alt="">
+                            </span>
+                            Facebook social plugin
+                        </a>
+                    </div>
+                </div>
+            </div>
+            <div class="col-md-9">
+                <div class="checkout-page">
+                    <ol class="checkout-steps">
+                        <li class="steps active">
+                            <a href="~/Views/Home/checkout.cshtml" class="step-title">
+                                01. Thông tin đơn hàng
+                            </a>
+                            <div class="step-description">
+                                <div class="row">
+                                    <div class="col-md-6 col-sm-6">
+                                        <div class="new-customer">
+                                            <h5>
+                                                Khách hàng mới
+                                            </h5>
+                                            <label>
+                                                <span class="input-radio">
+                                                    <input type="radio" name="user">
+                                                </span>
+                                                <span class="text">
+                                                    Tôi muốn đăng ký nhận bản tin của Cửa hàng.
+                                                </span>
+                                            </label>
+                                            <label>
+                                                <span class="input-radio">
+                                                    <input type="radio" name="user">
+                                                </span>
+                                                <span class="text">
+                                                    Địa chỉ giao hàng và địa chỉ thanh toán của tôi giống nhau .
+                                                </span>
+                                            </label>
+                                            <p class="requir">
+                                                Bằng cách tạo một tài khoản, bạn sẽ có thể mua sắm nhanh chóng được cập nhật về trạng thái của đơn hàng và theo dõi các đơn hàng bạn đã thực hiện trước đó.
+                                            </p>
+                                            <a href="/Home/checkout2" >Đồng Ý</a>
+                                        </div>
+                                    </div>
+                                    <div class="col-md-6 col-sm-6">
+                                        <div class="run-customer">
+                                            <h5>
+                                                Thông tin khách hàng
+                                            </h5>
+                                            @using (Html.BeginForm())
+                                            {
+                                                <span>Email :</span><br />
+                                                @Html.TextBox("txtEmail");
+                                                <br />
+                                                <span>Mật Khẩu </span><br />
+                                                @Html.TextBox("txtmatkhau");
+                                                <br />
+                                                <p class="forgoten">
+                                                    <a href="#">
+                                                        Quên mật khẩu?
+                                                    </a>
+                                                </p>
+                                                <input type="submit" id="btnSubmit" name="btnSubmit"  value="Login"/>
+
+                                            }
+                                            <h5>@ViewBag.Thongbao</h5>
+
+
+
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </li>
+                        @*<li class="steps">
+                            <a href="~/Views/Home/checkout2.cshtml" class="step-title">
+                                02. Thông tin hóa đơn
+                            </a>
+                        </li>
+                        <li class="steps">
+                            <a href="~/Views/Home/checkout2.cshtml" class="step-title">
+                                03. Thông tin vận chuyển
+                            </a>
+                        </li>
+                        <li class="steps">
+                            <a href="#" class="step-title">
+                                04. Thông tin giao hàng
+                            </a>
+                        </li>
+                        <li class="steps">
+                            <a href="#" class="step-title">
+                                05. Thông tin thanh toán
+                            </a>
+                        </li>
+                        <li class="steps">
+                            <a href="#" class="step-title">
+                                06. Nhận xét đánh giá
+                            </a>
+                        </li>*@
+                    </ol>
+                </div>
+            </div>
+        </div>
+</div>
+</div>

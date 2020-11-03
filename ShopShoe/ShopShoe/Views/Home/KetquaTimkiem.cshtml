@@ -1,0 +1,26 @@
+﻿@using PagedList;
+@using PagedList.Mvc;
+@model PagedList.PagedList<ShopShoe.Models.Giay>
+
+@{
+    ViewBag.Title = "KetquaTimkiem";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+<h2 >KetquaTimkiem</h2>
+
+    @{
+        foreach (var item in Model)
+        {
+            <div class="col-md-2 col-sm-6">
+                <div class="products">
+                    <div class="thumbnail">
+                        <a href="/Home/details"><img src="@Url.Content("~/Asset/images/anh/"+item.AnhBia)" height="250" width="200" alt="Product Name"></a>
+                    </div>
+                    <div class="productname">@item.TenGiay</div>
+                    <h4 class="price"> @item.GiaBan K</h4>
+                    <div class="button_group"><button class="button add-cart" type="button">Add To Cart</button><button class="button compare" type="button"><i class="fa fa-exchange"></i></button><button class="button wishlist" type="button"><i class="fa fa-heart-o"></i></button></div>
+                </div>
+            </div>
+        }
+    }

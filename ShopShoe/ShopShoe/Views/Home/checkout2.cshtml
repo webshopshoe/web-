@@ -1,0 +1,218 @@
+﻿@model ShopShoe.Models.KhachHang
+@{
+    ViewBag.Title = "checkout2";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+<div class="clearfix">
+</div>
+<div class="page-index">
+    <div class="container">
+        <p>
+            Home - CheckOut
+        </p>
+    </div>
+</div>
+      
+<div class="clearfix">
+</div>
+<div class="container_fullwidth">
+    <div class="container">
+        <div class="row">
+            <div class="col-md-3">
+                <div class="special-deal leftbar" style="margin-top:0;">
+                    <h4 class="title">
+                        Ưu đãi
+                        <strong>
+                            đặc biệt
+                        </strong>
+                    </h4>
+                    @Html.Action("UUDaiPartial", "Home")
+                </div>
+
+                <div class="get-newsletter leftbar">
+                    <h3 class="title">
+                        Nhận
+                        <strong>
+                            thông tin mới
+                        </strong>
+                    </h3>
+                    <p>
+                        Nhập email để nhận thông tin
+                    </p>
+                    <form>
+                        <input class="email" type="text" name="" placeholder="Your Email...">
+                        <input class="submit" type="submit" value="Submit">
+                    </form>
+                </div>
+                <div class="fbl-box leftbar">
+                    <h3 class="title">
+                        Facebook
+                    </h3>
+                    <span class="likebutton">
+                        <a href="#">
+                            <img src="~/Asset/images/fblike.png" alt="">
+                        </a>
+                    </span>
+                    <p>
+                        12k people like Flat Shop.
+                    </p>
+                    <ul>
+                        <li>
+                            <a href="#">
+                            </a>
+                        </li>
+                        <li>
+                            <a href="#">
+                            </a>
+                        </li>
+                        <li>
+                            <a href="#">
+                            </a>
+                        </li>
+                        <li>
+                            <a href="#">
+                            </a>
+                        </li>
+                        <li>
+                            <a href="#">
+                            </a>
+                        </li>
+                        <li>
+                            <a href="#">
+                            </a>
+                        </li>
+                        <li>
+                            <a href="#">
+                            </a>
+                        </li>
+                        <li>
+                            <a href="#">
+                            </a>
+                        </li>
+                    </ul>
+                    <div class="fbplug">
+                        <a href="#">
+                            <span>
+                                <img src="~/Asset/images/fbicon.png" alt="">
+                            </span>
+                            Facebook social plugin
+                        </a>
+                    </div>
+                </div>
+            </div>
+            <div class="col-md-9">
+                <div class="checkout-page">
+                    <ol class="checkout-steps">
+                        <li class="steps">
+                            <div class="step-title">
+                                01.  Lựa chọn thanh toán
+                            </div>
+                        </li>
+                        <li class="steps active">
+                            <a href="~/View/Home/checkout.cshtml" class="step-title">
+                                02. Thông tin thanh toán
+                            </a>
+                            <div class="step-description">
+                                    <div class="row">
+                                        <div class="col-md-6 col-sm-6">
+                                            <div class="your-details">
+                                               @using(Html.BeginForm("checkout2","Home",FormMethod.Post))
+                                               {
+                                                   @Html.AntiForgeryToken()
+                                                   <div class="card">
+                                                       <div class="card-body">
+                                                           <div class="form-group">
+                                                               @Html.LabelFor(n => n.HoTen)
+                                                               @Html.TextBoxFor(n => n.HoTen, "", new { @class = "form-control", @placeholder = "Họ Tên" })
+                                                               @Html.ValidationMessageFor(n => n.HoTen, "", new { @class = "badge badge-danger" })
+                                                           </div>
+                                                           <div class="form-group">
+                                                               @Html.LabelFor(n => n.GioiTinh)
+                                                               @Html.TextBoxFor(n => n.GioiTinh, "", new { @class = "form-control", @placeholder = "Giới Tính" })
+                                                               @Html.ValidationMessageFor(n => n.GioiTinh, "", new { @class = "badge badge-danger" })
+                                                           </div>
+                                                           <div class="form-group">
+                                                               @Html.LabelFor(n => n.NgaySinh)
+                                                               @Html.TextBoxFor(n => n.NgaySinh, "", new { @class = "form-control", @placeholder = "Ngày Sinh" })
+                                                               @Html.ValidationMessageFor(n => n.NgaySinh, "", new { @class = "badge badge-danger" })
+                                                           </div>
+                                                           <div class="form-group">
+                                                               @Html.LabelFor(n => n.SoDienThoai)
+                                                               @Html.TextBoxFor(n => n.SoDienThoai, "", new { @class = "form-control", @placeholder = "Số ĐT" })
+                                                               @Html.ValidationMessageFor(n => n.SoDienThoai, "", new { @class = "badge badge-danger" })
+                                                           </div>
+                                                           <div class="form-group">
+                                                               @Html.LabelFor(n => n.DiaChi)
+                                                               @Html.TextBoxFor(n => n.DiaChi, "", new { @class = "form-control", @placeholder = "Địa Chỉ" })
+                                                               @Html.ValidationMessageFor(n => n.DiaChi, "", new { @class = "badge badge-danger" })
+                                                           </div>
+                                                           <div class="form-group">
+                                                               @Html.LabelFor(n => n.TaiKhoan)
+                                                               @Html.TextBoxFor(n => n.TaiKhoan, "", new { @class = "form-control", @placeholder = "Tài Khoản" })
+                                                               @Html.ValidationMessageFor(n => n.TaiKhoan, "", new { @class = "badge badge-danger" })
+                                                           </div>
+                                                           <div class="form-group">
+                                                               @Html.LabelFor(n => n.MatKhau)
+                                                               @Html.PasswordFor(n => n.MatKhau, new { @class = "form-control", @placeholder = "Mật khẩu" })
+                                                               @Html.ValidationMessageFor(n => n.MatKhau, "", new { @class = "badge badge-danger" })
+                                                           </div>
+                                                           <div class="form-group">
+                                                               @Html.LabelFor(n => n.ConfirmPassword)
+                                                               @Html.PasswordFor(n => n.ConfirmPassword, new { @class = "form-control", @placeholder = "Confim Password" })
+                                                               @Html.ValidationMessageFor(n => n.ConfirmPassword, "", new { @class = "badge badge-danger" })
+                                                           </div>
+                                                           <div class="form-group">
+                                                               @Html.LabelFor(n => n.Email)
+                                                               @Html.TextBoxFor(n => n.Email, "", new { @class = "form-control", @placeholder = "Email" })
+                                                               @Html.ValidationMessageFor(n => n.Email, "", new { @class = "badge badge-danger" })
+                                                           </div>
+                                                           <span class="input-radio">
+                                                               <input type="radio" name="user">
+                                                           </span>
+                                                           <span class="text">
+                                                               Tôi đã đọc và đồng ý với những
+                                                               <a href="#" class="red">
+                                                                   chính sách bảo mật
+                                                               </a>
+                                                           </span>
+                                                           <div class="form-group">
+                                                               <input type="Submit" name="submit" class="btn btn-danger" value="Register" />
+                                                           </div>
+
+                                                       </div>
+                                                   </div>
+                                               }
+                                                
+                                            </div>
+                                        </div>
+                                       
+                                    </div>
+                            </div>
+                        </li>
+                        <li class="steps">
+                            <a href="~/View/Home/checkout2.cshtml" class="step-title">
+                                03. Thông tin vận chuyển
+                            </a>
+                        </li>
+                        <li class="steps">
+                            <a href="#" class="step-title">
+                                04. Phương pháp vận chuyển
+                            </a>
+                        </li>
+                        <li class="steps">
+                            <a href="#" class="step-title">
+                                05. Thông tin thanh toán
+                            </a>
+                        </li>
+                        <li class="steps">
+                            <a href="#" class="step-title">
+                                06. Đánh giá nhận xét
+                            </a>
+                        </li>
+                    </ol>
+                </div>
+            </div>
+        </div>
+</div>
+</div>

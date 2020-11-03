@@ -1,0 +1,143 @@
+﻿
+@{
+    ViewBag.Title = "Index";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+<div class="clearfix"></div>
+<div class="hom-slider">
+    <div class="container">
+        <div id="sequence">
+            <div class="sequence-prev"><i class="fa fa-angle-left"></i></div>
+            <div class="sequence-next"><i class="fa fa-angle-right"></i></div>
+            <ul class="sequence-canvas">
+                <li class="animate-in">
+                    <div class="flat-caption caption1 formLeft delay300 text-center"><span class="suphead">Pháp năm 2020</span></div>
+                    <div class="flat-caption caption2 formLeft delay400 text-center">
+                        <h1>Bộ Sưu Tập Mùa Đông</h1>
+                    </div>
+                    <div class="flat-caption caption3 formLeft delay 2.000.000 text-center">
+                        <p>Mùa đông sắp đến quà tặng ngập tràn.<br>Mùa đông 2020</p>
+                    </div>
+                    <div class="flat-button caption4 formLeft delay600 text-center"><a class="more" href="#">More Details</a></div>
+                    <div class="flat-image formBottom delay200" data-duration="5" data-bottom="true"><img src="~/Asset/images/slider-image-01.png" alt=""></div>
+                </li>
+                <li>
+                    <div class="flat-caption caption2 formLeft delay400">
+                        <h1>Bộ Sưu Tập Mùa Đông</h1>
+                    </div>
+                    <div class="flat-caption caption3 formLeft delay 2.000.000">
+                        <h2>Cùng khám phá bộ siêu tập của chúng tôi<br>Những sản phẩm mới nhất</h2>
+                    </div>
+                    <div class="flat-button caption5 formLeft delay600"><a class="more" href="#">More Details</a></div>
+                    <div class="flat-image formBottom delay200" data-bottom="true"><img src="~/Asset/images/slider-image-02.png" alt=""></div>
+                </li>
+                <li>
+                    <div class="flat-caption caption2 formLeft delay400 text-center">
+                        <h1>Sản Phẩm Mới 2020</h1>
+                    </div>
+                    <div class="flat-caption caption3 formLeft delay 2.000.000 text-center">
+                        <p>Hãy mua giày để nhận nhiều quà tặng hấp dẫn. <br>của của hàng chúng tôi</p>
+                    </div>
+                    <div class="flat-button caption4 formLeft delay600 text-center"><a class="more" href="#">More Details</a></div>
+                    <div class="flat-image formBottom delay200" data-bottom="true"><img src="~/Asset/images/slider-image-03.png" alt=""></div>
+                </li>
+            </ul>
+        </div>
+    </div>
+    <div class="promotion-banner">
+        <div class="container">
+            <div class="row">
+                <div class="col-md-4 col-sm-4 col-xs-4">
+                    <div class="promo-box"><img src="~/Asset/images/promotion-01.png" alt=""></div>
+                </div>
+                <div class="col-md-4 col-sm-4 col-xs-4">
+                    <div class="promo-box"><img src="~/Asset/images/promotion-02.png" alt=""></div>
+                </div>
+                <div class="col-md-4 col-sm-4 col-xs-4">
+                    <div class="promo-box"><img src="~/Asset/images/promotion-03.png" alt=""></div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+<div class="clearfix"></div>
+<div class="container_fullwidth">
+    <div class="container">
+        <div class="hot-products">
+            <h3 class="title"><strong>Hot</strong> Products</h3>
+            <div class="clearfix"></div>
+            <ul id="hot">
+                <li>
+                    <div class="row">
+                        @Html.Action("partialHotProduct", "Home")
+                      </div>
+                </li>
+            </ul>
+        </div>
+        <div class="clearfix"></div>
+        <div class="our-brand">
+            <h3 class="title"><strong>Thương hiệu</strong> chúng tôi</h3>
+            <div class="control"><a id="prev_brand" class="prev" href="#">&lt;</a><a id="next_brand" class="next" href="#">&gt;</a></div>
+            <ul id="braldLogo">
+                <li>
+                    <ul class="brand_item">
+                        <li>
+                            <a href="/Home/ProductBrooks">
+                                <div class="brand-logo"><img src="~/Asset/images/envato.png" alt=""></div>
+                            </a>
+                        </li>
+                        <li>
+                            <a href="/Home/ProductNewBalance">
+                                <div class="brand-logo"><img src="~/Asset/images/themeforest.png" alt=""></div>
+                            </a>
+                        </li>
+                        <li>
+                            <a href="/Home/ProductPuma">
+                                <div class="brand-logo"><img src="~/Asset/images/photodune.png" alt=""></div>
+                            </a>
+                        </li>
+                        <li>
+                            <a href="/Home/Adias">
+                                <div class="brand-logo"><img src="~/Asset/images/activeden.png" alt=""></div>
+                            </a>
+                        </li>
+                        <li>
+                            <a href="/Home/ProductNike">
+                                <div class="brand-logo"><img src="~/Asset/images/nike.png" alt=""></div>
+                            </a>
+                        </li>
+                    </ul>
+                </li>
+                <li>
+                    <ul class="brand_item">
+                        <li>
+                            <a href="/Home/ProductBrooks">
+                                <div class="brand-logo"><img src="~/Asset/images/envato.png" alt=""></div>
+                            </a>
+                        </li>
+                        <li>
+                            <a href="/Home/ProductNewBalance">
+                                <div class="brand-logo"><img src="~/Asset/images/themeforest.png" alt=""></div>
+                            </a>
+                        </li>
+                        <li>
+                            <a href="/Home/ProductPuma">
+                                <div class="brand-logo"><img src="~/Asset/images/photodune.png" alt=""></div>
+                            </a>
+                        </li>
+                        <li>
+                            <a href="/Home/Adias">
+                                <div class="brand-logo"><img src="~/Asset/images/activeden.png" alt=""></div>
+                            </a>
+                        </li>
+                        <li>
+                            <a href="/Home/ProductBrooks">
+                                <div class="brand-logo"><img src="~/Asset/images/envato.png" alt=""></div>
+                            </a>
+                        </li>
+                    </ul>
+                </li>
+            </ul>
+        </div>
+    </div>
+</div>
